@@ -1,1 +1,16 @@
-n
+Node
+- npm init -y
+- npm install
+
+
+
+<!-- UI -->
+
+- npx http-server .
+- http://127.0.0.1:8080/web.html
+
+<!-- Run -->
+
+- npx cypress open
+
+รัน case ใน e2e/test.cy.js

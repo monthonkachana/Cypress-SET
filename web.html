@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Place Order</title>
+</head>
+<body>
+
+  <!-- ===== Account Information ===== -->
+  <section id="account-info">
+    <div id="cash-balance">
+      Cash Balance:
+      <span id="cash-amount">100000</span>
+      <span class="currency">THB</span>
+    </div>
+
+    <div id="portfolio">
+      <li data-symbol="AAPL">
+        AAPL:
+        <span class="shares" data-testid="shares-AAPL">100</span> shares
+      </li>
+    </div>
+  </section>
+
+  <!-- ===== Order Form ===== -->
+  <section id="place-order">
+    <form id="order-form">
+
+      <!-- Stock Symbol -->
+      <div class="form-row">
+        <label for="stock-symbol">Stock Symbol</label>
+        <input
+          type="text"
+          id="stock-symbol"
+          name="symbol"
+          data-testid="input-symbol"
+        />
+      </div>
+
+      <!-- Side -->
+      <div class="form-row">
+        <input
+          type="radio"
+          id="side-buy"
+          name="side"
+          value="BUY"
+          checked
+          data-testid="radio-buy"
+        />
+        <label for="side-buy">Buy</label>
+
+        <input
+          type="radio"
+          id="side-sell"
+          name="side"
+          value="SELL"
+          data-testid="radio-sell"
+        />
+        <label for="side-sell">Sell</label>
+      </div>
+
+      <!-- Price -->
+      <div class="form-row">
+        <label for="price">Price</label>
+        <input
+          type="number"
+          id="price"
+          name="price"
+          step="0.01"
+          data-testid="input-price"
+        />
+      </div>
+
+      <!-- Quantity -->
+      <div class="form-row">
+        <label for="quantity">Quantity</label>
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          data-testid="input-quantity"
+        />
+      </div>
+
+      <!-- Buttons -->
+      <div class="form-row">
+        <button type="submit" id="submit-order" data-testid="btn-submit">
+          Submit Order
+        </button>
+        <button type="reset" id="clear-order" data-testid="btn-clear">
+          Clear
+        </button>
+      </div>
+
+    </form>
+  </section>
+
+  <!-- ===== Result / Message ===== -->
+  <section id="order-result">
+    <div
+      id="success-message"
+      class="message success"
+      data-testid="msg-success"
+      style="display:none;"
+    >
+      Order submitted successfully
+    </div>
+
+    <div
+      id="error-message"
+      class="message error"
+      data-testid="msg-error"
+      style="display:none;"
+    >
+      Insufficient balance
+    </div>
+  </section>
+
+</body>
+</html>
